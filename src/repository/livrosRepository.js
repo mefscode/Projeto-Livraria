@@ -47,7 +47,7 @@ export async function LivroCriar(livros) {
     return result.insertId
 }
 
-export async function LivroEditar(livros, id_livro) {
+export async function LivroEditar(id_livro, livros) {
     const command = `
         UPDATE livros
         SET nome = ?,
