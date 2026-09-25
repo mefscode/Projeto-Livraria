@@ -1,0 +1,37 @@
+CREATE DATABASE livraria;
+USE livraria;
+
+CREATE TABLE livros(
+id_livro INT AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR (100),
+preco DECIMAL(10,2),
+genero VARCHAR (50)
+);
+
+CREATE TABLE clientes(
+id_cliente INT auto_increment PRIMARY KEY,
+nome VARCHAR(100),
+idade INT,
+cidade VARCHAR(2)
+);
+
+CREATE TABLE venda(
+id_cliente INT,
+id_livro INT,
+preco DECIMAL(10,2),
+
+    FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente),
+    FOREIGN KEY (id_livro) REFERENCES livros(id_livro)	
+);
+
+INSERT INTO clientes (nome, idade, cidade)
+VALUES ('Marcos', 16, 'SP');
+
+INSERT INTO livros (nome,preco,genero)
+VALUES
+("De quanta terra precisa um homem",10.50,"Relatos");
+
+SELECT * FROM livros;
+
+
+
