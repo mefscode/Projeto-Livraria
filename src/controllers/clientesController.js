@@ -3,6 +3,12 @@ import * as dbClientes   from '../repository/clientesRepository.js';
 import { Router } from "express";
 const endpoints = Router();
 
+endpoints.get('/clienteAll' , async (req,resp) =>{
+        const clientes = await dbClientes.ClienteAllBusca();
+
+        resp.send(clientes)
+})
+
 endpoints.get('/clientes/:id' , async (req,resp) => {
 
         const id = req.params.id;

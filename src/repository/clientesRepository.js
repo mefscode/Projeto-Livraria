@@ -1,5 +1,20 @@
 import { con } from "./connection.js";
 
+export async function ClienteAllBusca() {
+
+    const command = `
+        SELECT
+            id_cliente,
+            nome,
+            idade,
+            cidade
+        FROM clientes
+    `;
+
+    const[result] = await con.query(command, [])
+    return result;
+}
+
 export async function ClienteBusca(id) {
 
     const command = `
