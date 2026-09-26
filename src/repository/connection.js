@@ -2,9 +2,9 @@ import mysql from 'mysql2/promise.js';
 
 const con = await mysql.createConnection({
     host: 'localhost',
-    user: 'root', 
+    user: 'mefs', 
     database: 'livraria',
-    password: 'root'
+    password: 'mefs'
 })
 
 console.log('Conectou Com MYSQL')
